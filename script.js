@@ -42,24 +42,20 @@ $(document).ready(function() {
     // generates cells
     generateCells();
     
+    
+    // click event listener for selector
 
+    $('.align-icons').click(function(){
+        $('.align-icons.selected').removeClass('selected');
+        $(this).addClass('selected');
+    });
+
+    $(".style-icon").click(function(){
+        $(this).toggleClass("selected");
+    });
+
+    $('.input-cell').click(function(){
+        $('.input-cell.selected').removeClass('selected');
+        $(this).addClass('selected');
+    });
 });
-
-
-let ans = ""
-let n = 128;
-
-while (n > 0) {
-
-    let rem = n % 26;
-    if (n == 0) {
-        ans = "Z" + ans;
-        n = Math.floor(n / 26) - 1;
-    }
-    else {
-        ans = String.fromCharCode(rem - 1 + 65) + ans;
-        n = Math.floor(n / 26);
-    }
-}
-
-console.log(ans)
